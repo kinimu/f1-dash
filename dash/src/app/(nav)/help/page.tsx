@@ -269,12 +269,12 @@ export default function HelpPage() {
 
 			<div className="mb-4 flex flex-col gap-2">
 				<div className="flex flex-row items-center gap-2">
-					<TemperatureComplication value={39} label="ТРС" />
+					<TemperatureComplication value={39} label="TRC" />
 					<p>Отображает текущую температуру трассы.</p>
 				</div>
 
 				<div className="flex flex-row items-center gap-2">
-					<TemperatureComplication value={26} label="ВЗДХ" />
+					<TemperatureComplication value={26} label="AIR" />
 					<p>Отображает текущую температуру воздуха.</p>
 				</div>
 
