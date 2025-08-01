@@ -2,8 +2,8 @@ import { type ReactNode } from "react";
 // import Image from "next/image";
 import Link from "next/link";
 
-import githubIcon from "public/icons/github.svg";
-import coffeeIcon from "public/icons/bmc-logo.svg";
+// import githubIcon from "public/icons/github.svg";
+// import coffeeIcon from "public/icons/bmc-logo.svg";
 
 import Footer from "@/components/Footer";
 
