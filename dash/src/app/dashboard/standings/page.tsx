@@ -16,8 +16,8 @@ export default function Standings() {
 	if (!isRace) {
 		return (
 			<div className="flex h-full w-full flex-col items-center justify-center">
-				<p>championship standings unavailable</p>
-				<p className="text-sm text-zinc-500">currently only available during a race</p>
+				<p>Данные Недоступны</p>
+				<p className="text-sm text-zinc-500">пока что информация отображается только во время или после гонки</p>
 			</div>
 		);
 	}
@@ -25,7 +25,7 @@ export default function Standings() {
 	return (
 		<div className="grid h-full grid-cols-1 divide-y divide-zinc-800 lg:grid-cols-2 lg:divide-x lg:divide-y-0">
 			<div className="h-full p-4">
-				<h2 className="text-xl">Driver Championship Standings</h2>
+				<h2 className="text-xl">Личный Зачет Пилотов</h2>
 
 				<div className="divide flex flex-col divide-y divide-zinc-800">
 					{!driverStandings &&
@@ -67,7 +67,7 @@ export default function Standings() {
 			</div>
 
 			<div className="h-full p-4">
-				<h2 className="text-xl">Team Championship Standings</h2>
+				<h2 className="text-xl">Кубок Конструкторов</h2>
 
 				<div className="divide flex flex-col divide-y divide-zinc-800">
 					{!teamStandings && new Array(10).fill("").map((_, index) => <SkeletonItem key={`team.loading.${index}`} />)}

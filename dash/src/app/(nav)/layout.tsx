@@ -17,19 +17,20 @@ export default function Layout({ children }: Props) {
 			<nav className="sticky top-0 left-0 z-10 flex h-12 w-full items-center justify-between gap-4 border-b border-zinc-800 p-2 px-4 backdrop-blur-lg">
 				<div className="flex gap-4">
 					<Link className="transition duration-100 active:scale-95" href="/">
-						Home
+						Главная
 					</Link>
 					<Link className="transition duration-100 active:scale-95" href="/dashboard">
-						Dashboard
+						Дашборд
 					</Link>
 					<Link className="transition duration-100 active:scale-95" href="/schedule">
-						Schedule
+						Расписание
 					</Link>
 					<Link className="transition duration-100 active:scale-95" href="/help">
-						Help
+						Справка
 					</Link>
 				</div>
 
+				{/*
 				<div className="hidden items-center gap-4 pr-2 sm:flex">
 					<Link
 						className="flex items-center gap-2 transition duration-100 active:scale-95"
@@ -49,6 +50,7 @@ export default function Layout({ children }: Props) {
 						<span>GitHub</span>
 					</Link>
 				</div>
+				*/}
 			</nav>
 
 			<main className="container mx-auto max-w-(--breakpoint-lg) px-4">

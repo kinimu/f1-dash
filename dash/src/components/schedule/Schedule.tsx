@@ -5,6 +5,7 @@ import Round from "@/components/schedule/Round";
 import type { Round as RoundType } from "@/types/schedule.type";
 
 import { env } from "@/env";
+import { translateString } from "@/lib/translations";
 
 export const getSchedule = async () => {
 	await connection();
@@ -28,7 +29,7 @@ export default async function Schedule() {
 	if (!schedule) {
 		return (
 			<div className="flex h-44 flex-col items-center justify-center">
-				<p>Schedule not found</p>
+				<p>{translateString("Schedule not found")}</p>
 			</div>
 		);
 	}

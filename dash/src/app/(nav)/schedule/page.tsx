@@ -2,13 +2,14 @@ import { Suspense } from "react";
 
 import NextRound from "@/components/schedule/NextRound";
 import Schedule from "@/components/schedule/Schedule";
+import { translateString } from "@/lib/translations";
 
 export default async function SchedulePage() {
 	return (
 		<div>
 			<div className="my-4">
-				<h1 className="text-3xl">Up Next</h1>
-				<p className="text-zinc-500">All times are local time</p>
+				<h1 className="text-3xl">{translateString("Up Next")}</h1>
+				<p className="text-zinc-500">{translateString("Время указано местное")}</p>
 			</div>
 
 			<Suspense fallback={<NextRoundLoading />}>
@@ -16,8 +17,8 @@ export default async function SchedulePage() {
 			</Suspense>
 
 			<div className="my-4">
-				<h1 className="text-3xl">Schedule</h1>
-				<p className="text-zinc-500">All times are local time</p>
+				<h1 className="text-3xl">{translateString("Расписание")}</h1>
+				<p className="text-zinc-500">{translateString("Время указано местное")}</p>
 			</div>
 
 			<Suspense fallback={<FullScheduleLoading />}>

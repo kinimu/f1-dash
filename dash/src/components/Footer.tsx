@@ -4,37 +4,37 @@ export default function Footer() {
 	return (
 		<footer className="my-8 text-sm text-zinc-500">
 			<div className="mb-4 flex flex-wrap gap-2">
+				{/*
 				<p>
-					Made with ♥ by <TextLink website="https://slowly.dev">Slowly</TextLink>.
+					Сделано в <TextLink website="https://gadgetpark.kz">Gadget Park</TextLink>.
+				</p>
+				*/}
+
+				
+
+				<p>
+					Основной сайт <TextLink website="https://formula1.com.kz">Формула 1 Казахстан</TextLink> пока еще находится в разработке. 
 				</p>
 
 				<p>
-					<TextLink website="https://www.buymeacoffee.com/slowlydev">Buy me a coffee</TextLink> to support me.
+					А пока что залетайте в  <TextLink website="https://t.me/f1comkz">телегу</TextLink>.
 				</p>
 
+				{/*
 				<p>
-					Contribute on <TextLink website="https://github.com/slowlydev/f1-dash">GitHub</TextLink>.
-				</p>
-
-				<p>
-					Check out the Community <TextLink website="https://discord.gg/unJwu66NuB">Discord</TextLink>.
-				</p>
-
-				<p>
-					Get{" "}
+					Справка по сайту{" "}
 					<Link className="text-blue-500" href="/help">
-						Help
+						тут
 					</Link>
 					.
 				</p>
+				*/}
 
-				<p>Version: {process.env.version}</p>
+				<p>Версия: 0.7</p>
 			</div>
 
 			<p>
-				This project/website is unofficial and is not associated in any way with the Formula 1 companies. F1, FORMULA
-				ONE, FORMULA 1, FIA FORMULA ONE WORLD CHAMPIONSHIP, GRAND PRIX and related marks are trademarks of Formula One
-				Licensing B.V.
+				Этот проект никакого отношения не имеет к официальной Формуле 1. Сделано для любителей гонок таким же любителем. Пока что в одиночку. Можете присоединяться у кого есть желение.
 			</p>
 		</footer>
 	);

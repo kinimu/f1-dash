@@ -18,50 +18,50 @@ export default function SettingsPage() {
 	const settings = useSettingsStore();
 	return (
 		<div>
-			<h1 className="mb-4 text-3xl">Settings</h1>
+			<h1 className="mb-4 text-3xl">Настройки</h1>
 
-			<h2 className="my-4 text-2xl">Visual</h2>
+			<h2 className="my-4 text-2xl">Визуальные настройки</h2>
 
 			<div className="flex gap-2">
 				<Toggle enabled={settings.carMetrics} setEnabled={(v) => settings.setCarMetrics(v)} />
-				<p className="text-zinc-500">Show Car Metrics (RPM, Gear, Speed)</p>
+				<p className="text-zinc-500">Отображать параметры болида (обороты, передача, скорость)</p>
 			</div>
 
 			<div className="flex gap-2">
 				<Toggle enabled={settings.showCornerNumbers} setEnabled={(v) => settings.setShowCornerNumbers(v)} />
-				<p className="text-zinc-500">Show Corner Numbers on Track Map</p>
+				<p className="text-zinc-500">Показать номера поворотов на схеме трассы</p>
 			</div>
 
 			<div className="flex gap-2">
 				<Toggle enabled={settings.tableHeaders} setEnabled={(v) => settings.setTableHeaders(v)} />
-				<p className="text-zinc-500">Show Driver Table Header</p>
+				<p className="text-zinc-500">Показать заголовок таблицы пилотов</p>
 			</div>
 
 			<div className="flex gap-2">
 				<Toggle enabled={settings.showBestSectors} setEnabled={(v) => settings.setShowBestSectors(v)} />
-				<p className="text-zinc-500">Show Drivers Best Sectors</p>
+				<p className="text-zinc-500">Отображать лучшие сектора пилотов</p>
 			</div>
 
 			<div className="flex gap-2">
 				<Toggle enabled={settings.showMiniSectors} setEnabled={(v) => settings.setShowMiniSectors(v)} />
-				<p className="text-zinc-500">Show Drivers Mini Sectors</p>
+				<p className="text-zinc-500">Показать мини-сектора пилотов</p>
 			</div>
 
 			<div className="flex gap-2">
 				<Toggle enabled={settings.oledMode} setEnabled={(v) => settings.setOledMode(v)} />
-				<p className="text-zinc-500">OLED Mode (Pure Black Background)</p>
+				<p className="text-zinc-500">OLED-режим (абсолютно чёрный фон)</p>
 			</div>
 
 			<div className="flex gap-2">
 				<Toggle enabled={settings.useSafetyCarColors} setEnabled={(v) => settings.setUseSafetyCarColors(v)} />
-				<p className="text-zinc-500">Use Safety Car Colors</p>
+				<p className="text-zinc-500">Использовать цвета сейфти-кара</p>
 			</div>
 
-			<h2 className="my-4 text-2xl">Race Control</h2>
+			<h2 className="my-4 text-2xl">Дирекция гонки</h2>
 
 			<div className="flex gap-2">
 				<Toggle enabled={settings.raceControlChime} setEnabled={(v) => settings.setRaceControlChime(v)} />
-				<p className="text-zinc-500">Play Chime on new Race Control Message</p>
+				<p className="text-zinc-500">Звук при новом сообщении от дирекции гонки</p>
 			</div>
 
 			{settings.raceControlChime && (
@@ -81,46 +81,46 @@ export default function SettingsPage() {
 						setValue={(v) => settings.setRaceControlChimeVolume(v)}
 					/>
 
-					<p className="text-zinc-500">Race Control Chime Volume</p>
+					<p className="text-zinc-500">Громкость сигнала при сообщениях дирекции</p>
 				</div>
 			)}
 
-			<h2 className="my-4 text-2xl">Favorite Drivers</h2>
+			<h2 className="my-4 text-2xl">Избранные пилоты</h2>
 
-			<p className="mb-4">Select your favorite drivers to highlight them on the dashboard.</p>
+			<p className="mb-4">Выберите любимых пилотов для их выделения на дашборде.</p>
 
 			<FavoriteDrivers />
 
-			<h2 className="my-4 text-2xl">Speed Metric</h2>
+			<h2 className="my-4 text-2xl">Формат скорости</h2>
 
-			<p className="mb-4">Choose the unit in which you want to display speeds.</p>
+			<p className="mb-4">Укажите единицы измерения скорости.</p>
 
 			<SegmentedControls
 				id="speed-unit"
 				selected={settings.speedUnit}
 				onSelect={settings.setSpeedUnit}
 				options={[
-					{ label: "km/h", value: "metric" },
-					{ label: "mp/h", value: "imperial" },
+					{ label: "км/ч", value: "metric" },
+					{ label: "миль/ч", value: "imperial" },
 				]}
 			/>
 
-			<h2 className="my-4 text-2xl">Delay</h2>
+			<h2 className="my-4 text-2xl">Задержка</h2>
 
 			<p className="mb-4">
-				Here you have to option to set a delay for the data, it will displayed the amount entered in seconds later than
-				on the live edge. On the Dashboard page there is the same delay input field so you can set it without going to
-				the settings. It can be found in the most top bar on the right side.
+				Здесь вы можете задать задержку для данных — они будут отображаться с указанным
+				количеством секунд опоздания относительно «живого» потока. На странице панели управления
+				есть такое же поле для ввода задержки, чтобы вы могли настроить её, не переходя в настройки. Оно находится в верхней панели справа.
 			</p>
 
 			<div className="flex items-center gap-2">
 				<DelayTimer />
 				<DelayInput />
-				<p className="text-zinc-500">Delay in seconds</p>
+				<p className="text-zinc-500">Задержка в секундах</p>
 			</div>
 
 			<Button className="mt-2 bg-red-500!" onClick={() => settings.setDelay(0)}>
-				Reset delay
+				Сбросить
 			</Button>
 
 			<Footer />

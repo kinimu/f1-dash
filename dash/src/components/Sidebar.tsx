@@ -17,11 +17,11 @@ import DelayTimer from "@/components/DelayTimer";
 const liveTimingItems = [
 	{
 		href: "/dashboard",
-		name: "Dashboard",
+		name: "Дашборд",
 	},
 	{
 		href: "/dashboard/track-map",
-		name: "Track Map",
+		name: "Схема Трассы",
 	},
 	// {
 	// 	href: "/dashboard/head-to-head",
@@ -29,11 +29,11 @@ const liveTimingItems = [
 	// },
 	{
 		href: "/dashboard/standings",
-		name: "Standings",
+		name: "Результаты",
 	},
 	{
 		href: "/dashboard/weather",
-		name: "Weather",
+		name: "Погода",
 	},
 ];
 
@@ -118,7 +118,7 @@ export default function Sidebar({ connected }: Props) {
 						<SidenavButton className="md:hidden" onClick={() => close()} />
 					</div>
 
-					<p className="p-2 text-sm text-zinc-500">Live Timing</p>
+					<p className="p-2 text-sm text-zinc-500">Онлайн Данные</p>
 
 					<div className="flex flex-col gap-1">
 						{liveTimingItems.map((item) => (
@@ -139,23 +139,21 @@ export default function Sidebar({ connected }: Props) {
 						{driverItems?.map((item) => <Item key={item.href} item={item} />)}
 					</div> */}
 
-					<p className="mt-4 p-2 text-sm text-zinc-500">General</p>
+					<p className="mt-4 p-2 text-sm text-zinc-500">Основное</p>
 
 					<div className="flex flex-col gap-1">
-						<Item item={{ href: "/dashboard/settings", name: "Settings" }} />
+						<Item item={{ href: "/dashboard/settings", name: "Настройки" }} />
 
-						<Item target="_blank" item={{ href: "/schedule", name: "Schedule" }} />
-						<Item target="_blank" item={{ href: "/help", name: "Help" }} />
-						<Item target="_blank" item={{ href: "/", name: "Home" }} />
+						<Item target="_blank" item={{ href: "/schedule", name: "Расписание" }} />
+						<Item target="_blank" item={{ href: "/help", name: "Справка" }} />
+						<Item target="_blank" item={{ href: "/", name: "Главная" }} />
 					</div>
 
-					<p className="mt-4 p-2 text-sm text-zinc-500">Links</p>
+					<p className="mt-4 p-2 text-sm text-zinc-500">Ссылки</p>
 
 					<div className="flex flex-col gap-1">
-						<Item target="_blank" item={{ href: "https://github.com/slowlydev/f1-dash", name: "Github" }} />
-						<Item target="_blank" item={{ href: "https://discord.gg/unJwu66NuB", name: "Discord" }} />
-						<Item target="_blank" item={{ href: "https://buymeacoffee.com/slowlydev", name: "Buy me a coffee" }} />
-						<Item target="_blank" item={{ href: "https://github.com/sponsors/slowlydev", name: "Sponsor me" }} />
+						<Item target="_blank" item={{ href: "https://t.me/f1comkz", name: "Telegram" }} />
+
 					</div>
 				</nav>
 			</motion.div>

@@ -1,35 +1,18 @@
-import { connection } from "next/server";
 import { utc } from "moment";
 
-import Countdown from "@/components/schedule/Countdown";
 import Round from "@/components/schedule/Round";
+import ClientCountdownWrapper from "@/components/schedule/ClientCountdownWrapper";
 
-import { env } from "@/env";
-import type { Round as RoundType } from "@/types/schedule.type";
-
-export const getNext = async () => {
-	await connection();
-
-	try {
-		const nextReq = await fetch(`${env.API_URL}/api/schedule/next`, {
-			cache: "no-store",
-		});
-		const next: RoundType = await nextReq.json();
-
-		return next;
-	} catch (e) {
-		console.error("error fetching next round", e);
-		return null;
-	}
-};
+import { getNextRace } from "@/lib/races";
+import { translateString } from "@/lib/translations";
 
 export default async function NextRound() {
-	const next = await getNext();
+	const next = await getNextRace();
 
 	if (!next) {
 		return (
 			<div className="flex h-44 flex-col items-center justify-center">
-				<p>No upcoming weekend found</p>
+				<p>{translateString("No upcoming weekend found")}</p>
 			</div>
 		);
 	}
@@ -40,13 +23,10 @@ export default async function NextRound() {
 	return (
 		<div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
 			{nextSession || nextRace ? (
-				<div className="flex flex-col gap-4">
-					{nextSession && <Countdown next={nextSession} type="other" />}
-					{nextRace && <Countdown next={nextRace} type="race" />}
-				</div>
+				<ClientCountdownWrapper nextSession={nextSession} nextRace={nextRace} />
 			) : (
 				<div className="flex flex-col items-center justify-center">
-					<p>No upcoming sessions found</p>
+					<p>{translateString("No upcoming sessions found")}</p>
 				</div>
 			)}
 

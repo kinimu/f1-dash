@@ -12,8 +12,8 @@ export default function DataWeatherInfo() {
 		<div className="flex justify-between gap-4">
 			{weather ? (
 				<>
-					<TemperatureComplication value={Math.round(parseFloat(weather.trackTemp))} label="TRC" />
-					<TemperatureComplication value={Math.round(parseFloat(weather.airTemp))} label="AIR" />
+					<TemperatureComplication value={Math.round(parseFloat(weather.trackTemp))} label="ТРС" />
+					<TemperatureComplication value={Math.round(parseFloat(weather.airTemp))} label="ВЗДХ" />
 					<HumidityComplication value={parseFloat(weather.humidity)} />
 					<RainComplication rain={weather.rainfall === "1"} />
 					<WindSpeedComplication speed={parseFloat(weather.windSpeed)} directionDeg={parseInt(weather.windDirection)} />
